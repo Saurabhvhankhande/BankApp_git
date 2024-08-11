@@ -14,21 +14,20 @@ class Test_SignUp:
             assert True
         else:
             assert False
-            driver.quit()
 
     def test_SignUp_002(self, setup):
         self.driver=setup
         self.su=SignUp_Class(self.driver)
         self.driver.save_screenshot(".\\ScreenShots\\signup_interface.jpg")
         self.su.SignUp_button()
-        self.su.Enter_username("seusaar5bh")
+        self.su.Enter_username("seusadcsar5bh")
         time.sleep(2)
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        self.su.Enter_password("Sraafs4bh@1123")
+        self.su.Enter_password("Sraafs4sfbh@1123")
         time.sleep(2)
-        self.su.Enter_email("sraeefbah1@gamail.com")
+        self.su.Enter_email("srasdeefbah1@gamail.com")
         time.sleep(2)
-        self.su.Enter_phone("9846578811")
+        self.su.Enter_phone("98465578811")
         self.su.Create_User_button()
         time.sleep(2)
         if self.su.success_msg_validation()=="User created successfully":
@@ -37,7 +36,6 @@ class Test_SignUp:
             assert True
         else:
             assert False
-            driver.quit()
 
 
 
@@ -51,8 +49,8 @@ class Test_SignUp:
         self.lp.click_login_button()
         time.sleep(2)
         if self.driver.title == "Dashboard":
-            self.driver.save_screenshot(".\\ScreenShots\\dashboard.png")
+            self.driver.save_screenshot(".\\ScreenShots\\login successfull.jpg")
             assert True
         else:
             assert False
-            driver.quit(2)
+            self.driver.save_screenshot(".\\ScreenShots\\login fail.jpg")
